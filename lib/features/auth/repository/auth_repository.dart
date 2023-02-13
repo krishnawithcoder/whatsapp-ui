@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:whatsapp_ui/common/repositoris/common_firebase_storage_repository.dart';
 import 'package:whatsapp_ui/common/utils/utils.dart';
 import 'package:whatsapp_ui/features/auth/screen/otp_screen.dart';
 import 'package:whatsapp_ui/features/auth/screen/user_information_screen.dart';
@@ -93,12 +94,12 @@ class AuthRepository {
           'https://png.pngitem.com/pimgs/s/649-6490124_katie-notopoulos-katienotopoulos-i-write-about-tech-round.png';
 
       if (profilePic != null) {
-        //   photoUrl = await ref
-        //      .read(commonFirebaseStorageRepositoryProvider)
-        //     .storeFileToFirebase(
-        //      'profilePic/$uid',
-        //      profilePic,
-        //   );
+        photoUrl = await ref
+            .read(commonFirebaseStorageRepositoryProvider)
+            .storeFileToFirebase(
+              'profilePic/$uid',
+              profilePic,
+            );
       }
 
       var user = UserModel(
