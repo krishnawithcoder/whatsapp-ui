@@ -113,6 +113,7 @@ class AuthRepository {
 
       await firestore.collection('users').doc(uid).set(user.toMap());
 
+      // ignore: use_build_context_synchronously
       Navigator.pushAndRemoveUntil(
         context,
         MaterialPageRoute(
