@@ -17,7 +17,10 @@ import 'package:flutter/foundation.dart'
 class DefaultFirebaseOptions {
   static FirebaseOptions get currentPlatform {
     if (kIsWeb) {
-      return web;
+      throw UnsupportedError(
+        'DefaultFirebaseOptions have not been configured for web - '
+        'you can reconfigure this by running the FlutterFire CLI again.',
+      );
     }
     switch (defaultTargetPlatform) {
       case TargetPlatform.android:
@@ -25,7 +28,10 @@ class DefaultFirebaseOptions {
       case TargetPlatform.iOS:
         return ios;
       case TargetPlatform.macOS:
-        return macos;
+        throw UnsupportedError(
+          'DefaultFirebaseOptions have not been configured for macos - '
+          'you can reconfigure this by running the FlutterFire CLI again.',
+        );
       case TargetPlatform.windows:
         throw UnsupportedError(
           'DefaultFirebaseOptions have not been configured for windows - '
@@ -43,41 +49,21 @@ class DefaultFirebaseOptions {
     }
   }
 
-  static const FirebaseOptions web = FirebaseOptions(
-    apiKey: 'AIzaSyCo4A1Xa39akq5okoLnSkm1MDbj9yonbBg',
-    appId: '1:355601821000:web:08b80f3e78445ccd99177d',
-    messagingSenderId: '355601821000',
-    projectId: 'flutter-ui-6da2a',
-    authDomain: 'flutter-ui-6da2a.firebaseapp.com',
-    storageBucket: 'flutter-ui-6da2a.appspot.com',
-    measurementId: 'G-PLW0GKVZ1H',
-  );
-
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyBMJ9mZkDJesoruhkB3gmblL7EprPJHHYg',
-    appId: '1:355601821000:android:4a10ef796783197699177d',
-    messagingSenderId: '355601821000',
-    projectId: 'flutter-ui-6da2a',
-    storageBucket: 'flutter-ui-6da2a.appspot.com',
+    apiKey: 'AIzaSyB37aSzQwR_RJatCxy9F7V5hcxSvy1pWqc',
+    appId: '1:867907366273:android:03f3e5c37621ae01cf0c80',
+    messagingSenderId: '867907366273',
+    projectId: 'whatsapp-backend-c4d7f',
+    storageBucket: 'whatsapp-backend-c4d7f.appspot.com',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyBxn7QnKOtJmJO-iTsI-VipkN2wMcK3ECg',
-    appId: '1:355601821000:ios:4a99e43bf361e7c899177d',
-    messagingSenderId: '355601821000',
-    projectId: 'flutter-ui-6da2a',
-    storageBucket: 'flutter-ui-6da2a.appspot.com',
-    iosClientId: '355601821000-ti23ndpoeilmb6pppasb132bqfco0k9n.apps.googleusercontent.com',
-    iosBundleId: 'com.example.whatsappUi',
-  );
-
-  static const FirebaseOptions macos = FirebaseOptions(
-    apiKey: 'AIzaSyBxn7QnKOtJmJO-iTsI-VipkN2wMcK3ECg',
-    appId: '1:355601821000:ios:4a99e43bf361e7c899177d',
-    messagingSenderId: '355601821000',
-    projectId: 'flutter-ui-6da2a',
-    storageBucket: 'flutter-ui-6da2a.appspot.com',
-    iosClientId: '355601821000-ti23ndpoeilmb6pppasb132bqfco0k9n.apps.googleusercontent.com',
+    apiKey: 'AIzaSyBSDWRP0gJNvfu50pTKYfUqRDDEkQsQrUI',
+    appId: '1:867907366273:ios:6f8cdf10bb49ba7ecf0c80',
+    messagingSenderId: '867907366273',
+    projectId: 'whatsapp-backend-c4d7f',
+    storageBucket: 'whatsapp-backend-c4d7f.appspot.com',
+    iosClientId: '867907366273-j9hk7oisbdk70t3q3ri6n5qveuj30ohh.apps.googleusercontent.com',
     iosBundleId: 'com.example.whatsappUi',
   );
 }

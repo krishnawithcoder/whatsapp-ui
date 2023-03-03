@@ -1,8 +1,9 @@
 import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'package:whatsapp_ui/features/auth/repository/auth_repository.dart';
-import 'package:whatsapp_ui/model/user_model.dart';
+import 'package:whatsapp_ui/models/user_model.dart';
 
 final authControllerProvider = Provider((ref) {
   final authRepository = ref.watch(authRepositoryProvider);
